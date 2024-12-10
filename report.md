@@ -40,12 +40,19 @@ docker network create myNetwork
 5. **Подключение контейнеров к сети**
 
 ``` bash
-docker network connect myNet aafire1
-docker network connect myNet aafire2
+docker network connect myNetwork aafire1
+docker network connect myNetwork aafire2
+```
+
+```bash
+docker network inspect myNetwork
 ```
 
 6. **Проверка соединения**
-
+```bash
+# переходим в терминал первого контейнера
+docker exec -it mycontainer1 bash
+```
    
 ``` bash
 ping -c 5 172.18.0.3
